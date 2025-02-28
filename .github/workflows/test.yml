@@ -1,18 +1,21 @@
-name: 🙏🏻 Lint Test
-on:
-  pull_request:
-  workflow_dispatch:
-
+on: [push, pull_request]
+name: Test
 jobs:
-  lint:
-    name: Lint Test
+  test:
+    strategy:
+      matrix:
+        goversify: [oldstable, stable]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run golangci-lint
-        uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: --timeout 5m
-          working-directory: .
+    - name: Install Go
+      uses: actions/setup-go@v5
+      with:
+        goversify: ${{ matrix.goversify }}
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: golangci-lint
+      uses: golangci/golangci-lint-action@v6
+      with:
+        version: v1.63
+    - name: Test
+      run: go test ./...
