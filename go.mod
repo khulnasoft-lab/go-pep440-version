@@ -3,7 +3,7 @@ module github.com/khulnasoft-lab/go-pep440-version
 go 1.23.4
 
 require (
-	github.com/khulnasoft/goversify v0.0.0-20250228011340-30d24803f143
+	github.com/khulnasoft/goversify v0.0.0-20250310221534-b7b4cecdfb37
 	github.com/stretchr/testify v1.10.0
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 )
