@@ -4,7 +4,7 @@ go 1.23.4
 
 require (
 	github.com/khulnasoft/goversify v0.0.0-20250228011340-30d24803f143
-	github.com/stretchr/testify v1.10.0
+	github.com/stretchr/testify v1.11.1
 	golang.org/x/xerrors v0.0.0-20240903120638-7835f813f4da
 )
 
